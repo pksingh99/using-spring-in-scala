@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:scala-util="http://www.springframework.org/schema/scala/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/scala/util http://www.springframework.org/schema/scala/util/scala-util.xsd">
+
+    <bean id="javaCollection" class="org.springframework.scala.demo.collection.JavaCollectionBean">
+        <constructor-arg ref="javaList"/>
+    </bean>
+
+    <util:list id="javaList">
+        <value>Foo</value>
+        <value>Bar</value>
+    </util:list>
+
+    <bean id="scalaCollection" class="org.springframework.scala.demo.collection.ScalaCollectionBean">
+        <constructor-arg ref="scalaSeq"/>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="propertyEditorRegistrars">
+                <bean class="org.springframework.scala.beans.propertyeditors.ScalaEditorRegistrar"/>
+        </property>
+    </bean>
+
+    <scala-util:seq id="scalaSeq">
+        <value>Foo</value>
+        <value>Bar</value>
+    </scala-util:seq>
+
+</beans>
