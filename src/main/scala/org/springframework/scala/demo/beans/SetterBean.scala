@@ -2,9 +2,6 @@ package org.springframework.scala.demo.beans
 
 import scala.reflect.BeanProperty
 
-class BeanPropertyScalaBean {
-
-	@BeanProperty
-	var readWrite: String = _
-
+class SetterBean {
+		@BeanProperty var foo: String = _
 }
