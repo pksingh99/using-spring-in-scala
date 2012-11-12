@@ -3,7 +3,6 @@ package org.springframework.scala.demo.scalaconfig
 import org.springframework.scala.context.function.FunctionalConfiguration
 
 class PersonConfiguration extends FunctionalConfiguration {
-
 	val jack = bean("jack") {
     new Person("Jack", "Doe")
 	}
@@ -13,11 +12,13 @@ class PersonConfiguration extends FunctionalConfiguration {
 	}
 
 	val john = bean("john") {
-    val john = new Person("John", "Doe")
+    val john = new InitializablePerson("John", "Doe")
 		john.father = jack()
 		john.mother = jane()
 		john
+	} init {
+		_.initialize()
+	} destroy {
+		_.destroy()
 	}
-
-
 }

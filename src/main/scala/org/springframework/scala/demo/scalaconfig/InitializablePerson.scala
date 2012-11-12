@@ -1,8 +1,5 @@
 package org.springframework.scala.demo.scalaconfig
 
-/**
- * @author Arjen Poutsma
- */
 class InitializablePerson(firstName: String, lastName: String)
 		extends Person(firstName, lastName) {
 

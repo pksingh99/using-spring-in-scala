@@ -6,12 +6,16 @@ object ScalaConfigDriver extends App {
 
 	val applicationContext = new FunctionalConfigApplicationContext(classOf[PersonConfiguration])
 
-	val john = applicationContext.getBean("john", classOf[Person])
+	val john = applicationContext.getBean("john", classOf[InitializablePerson])
 
 	println(john)
 
 	println(john.father)
 	println(john.mother)
+
+	println(john.initialised)
+	applicationContext.close()
+	println(john.initialised)
 
 
 }
