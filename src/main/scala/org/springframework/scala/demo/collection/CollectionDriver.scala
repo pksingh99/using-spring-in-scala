@@ -6,13 +6,9 @@ object CollectionDriver extends App {
 
 	val applicationContext = new ClassPathXmlApplicationContext("collection.xml" , getClass)
 
-	val javaCollection = applicationContext.getBean("javaCollection", classOf[JavaCollectionBean])
+	val collection = applicationContext.getBean("scalaCollection", classOf[CollectionBean])
 
-	println("Java collection: " + javaCollection.scalaSeq)
-
-	val scalaCollection = applicationContext.getBean("scalaCollection", classOf[ScalaCollectionBean])
-
-	println("Scala collection: " + scalaCollection.scalaSeq)
+	println("Scala collection: " + collection.scalaSeq)
 
 
 }
