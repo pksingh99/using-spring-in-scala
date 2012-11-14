@@ -24,4 +24,6 @@ object JmsDriver extends App {
 		case None => println("No text message received")
 	}
 
+	connectionFactory.destroy()
+
 }
