@@ -21,7 +21,7 @@ object JmsDriver extends App {
 
 	scalaTemplate.receive("queue") match {
 		case Some(textMessage: TextMessage) => println("Message received: " + textMessage.getText)
-		case None => println("No text message received")
+		case _ => println("No text message received")
 	}
 
 	connectionFactory.destroy()

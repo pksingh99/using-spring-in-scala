@@ -4,7 +4,7 @@ import org.springframework.scala.context.function.FunctionalConfigApplicationCon
 
 object ScalaConfigDriver extends App {
 
-	val applicationContext = new FunctionalConfigApplicationContext(classOf[PersonConfiguration])
+	val applicationContext = FunctionalConfigApplicationContext[PersonConfiguration]
 
 	val john = applicationContext.getBean("john", classOf[InitializablePerson])
 

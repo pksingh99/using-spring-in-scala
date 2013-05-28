@@ -7,8 +7,8 @@
     <version>1.0.RELEASE-SNAPSHOT</version>
     <name>Using Spring Scala Demos</name>
     <properties>
-        <spring.framework.version>3.2.0.RC1</spring.framework.version>
-        <scala.version>2.9.2</scala.version>
+        <spring.framework.version>3.2.3.RELEASE</spring.framework.version>
+        <scala.version>2.10.1</scala.version>
         <scala.plugin.version>3.1.0</scala.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -19,9 +19,14 @@
             <url>http://scala-tools.org/repo-releases</url>
         </repository>
         <repository>
-            <id>repo.springsource.org</id>
-            <name>SpringSource Repo</name>
-            <url>http://repo.springsource.org/repo</url>
+            <id>milestone.springsource.org</id>
+            <name>SpringSource Milestone Repo</name>
+            <url>http://repo.springsource.org/milestone</url>
+        </repository>
+        <repository>
+            <id>releae.springsource.org</id>
+            <name>SpringSource Release Repo</name>
+            <url>http://repo.springsource.org/release</url>
         </repository>
     </repositories>
     <build>
@@ -113,7 +118,7 @@
         <dependency>
             <groupId>org.springframework.scala</groupId>
             <artifactId>spring-scala</artifactId>
-            <version>0.1.RELEASE-SNAPSHOT</version>
+            <version>1.0.0.M2</version>
         </dependency>
         <!-- Spring dependencies -->
         <dependency>
@@ -134,6 +139,11 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
+            <version>${spring.framework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jms</artifactId>
             <version>${spring.framework.version}</version>
         </dependency>
         <dependency>

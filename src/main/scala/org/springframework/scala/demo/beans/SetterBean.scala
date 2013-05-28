@@ -1,6 +1,6 @@
 package org.springframework.scala.demo.beans
 
-import scala.reflect.BeanProperty
+import scala.beans.BeanProperty
 
 class SetterBean {
 		@BeanProperty var foo: String = _
